@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Restaurants</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #f4f4f4;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 1rem;
+        }
+        .restaurant {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .restaurant h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .restaurant a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .restaurant a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Restaurants</title>
+</head>
+<body>
+    <header>
+        <h1>All Restaurants</h1>
+    </header>
+    <main>
+        <% if (restaurants && restaurants.length > 0) { %>
+            <% restaurants.forEach(restaurant => { %>
+                <div class="restaurant">
+                    <h2><%= restaurant.restaurantname %></h2>
+                    <form action="/order/<%= restaurant._id %>" method="GET">
+                        <button type="submit">Order Now</button>
+                    </form>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No restaurants available.</p>
+        <% } %>
+    </main>
+</body>
+</html>
+
+</body>
+</html>
